@@ -5,7 +5,7 @@ import sqlite3
 import datetime  # fechas y horas
 import tkinter.messagebox as messagebox #cuadro de mensaje
 
-
+"esto es una prueba"
 def cerrar_ventana_medico():
     ventana_cargar_medico.destroy()
 
