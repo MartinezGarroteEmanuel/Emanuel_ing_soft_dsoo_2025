@@ -1,3 +1,4 @@
+modificacionnnnnnnnnnnnnnnnnnnn
 import tkinter as tk
 from tkinter import ttk
 import sqlite3
@@ -14,16 +15,19 @@ def cerrar_ventana_paciente():
 def conectar_db():
     conn = sqlite3.connect(r"C:/Users/marti/Desktop/sq/Hospital.db")  # Ruta 
     return conn
+    dqweqwe
+
+wqeqweqweqwe
 
 
 def mostrar_informe_camas_ocupadas():
-    ventana_informe = tk.Toplevel(ventana)
+    ventana_informe = tk.Toplevqweqeqweqel(ventana)
     ventana_informe.title("Informe de Camas Ocupadas")
 
 
-    tree = ttk.Treeview(ventana_informe, columns=("Codigo Ingreso", "Habitacion", "Cama", "Codigo Paciente", "Codigo Medico"), show="headings")
+    tree = ttk.Treeview(ventana_informe, columns=("Codqweqweqwego Ingreso", "Habitacion", "Cama", "Codigo Paciente", "Codigo Medico"), show="headings")
     #tabla visual
-    tree.heading("Codigo Ingreso", text="Código Ingreso") #establece los encabezados de las columnas
+    tree.heading("Codigo Ingreso", text="Códigoasdasdasd Ingreso") #establece los encabezados de las columnas
     tree.heading("Habitacion", text="Habitación")
     tree.heading("Cama", text="Cama")
     tree.heading("Codigo Paciente", text="Código Paciente")
@@ -35,17 +39,17 @@ def mostrar_informe_camas_ocupadas():
     conn = conectar_db()
     cursor = conn.cursor()
     cursor.execute("SELECT codigo, habitacion, cama, codigo_paciente, codigo_medico FROM Ingresos")
-    ingresos = cursor.fetchall()
+    ingresos = cursor.fetchall()weqweqweqwe
     conn.close()
 
     for ingreso in ingresos:
-        tree.insert("", tk.END, values=ingreso)
+        tree.insert("", tk.END, vasdasdqwdqalues=ingreso)
 
     ttk.Button(ventana_informe, text="Cerrar", command=ventana_informe.destroy).grid(row=1, column=0, padx=10, pady=10)
 
 # Función para guardar un médico en la base de datos
-def guardar_medico():
-    codigo = entry_codigo.get()
+def guardar_medico():qwdqsdasdasda
+    codigo = entry_codigo.get()qweqweqwe
     apellido = entry_apellido.get()
     nombre = entry_nombre.get()
     matricula = entry_matricula.get()
@@ -58,12 +62,12 @@ def guardar_medico():
         cursor.execute("""
             INSERT INTO Medicos (codigo, apellido, nombre, matricula, especialidad)
             VALUES (?, ?, ?, ?, ?)
-        """, (codigo, apellido, nombre, matricula, especialidad))
+        """, (codigo, apellido, nombre, matricasdasdasdasdula, especialidad))
         conn.commit() # guarda los cambios en la base de datos.
 
-        print("Médico guardado correctamente")
+        print("Médico guardaqweqweqweqweqwedo correctamente")
     except sqlite3.IntegrityError:
-        print("Error: El código del médico ya existe.")
+        print("Error: El cóasdasdsdasddigo del médico ya existe.")
     
     conn.close()
 
@@ -637,4 +641,4 @@ def cargar_paciente():
     ttk.Button(ventana_cargar_paciente, text="Cancelar", command=cerrar_ventana_paciente).grid(row=8, column=0, columnspan=2)
 
 
-ventana.mainloop()
+ventana.mainloop(
